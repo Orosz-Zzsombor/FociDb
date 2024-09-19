@@ -1,0 +1,72 @@
+﻿@page
+@model WebApplication1.Pages.ListázModel
+
+@{
+    ViewData["Title"] = "Listáz";
+}
+
+<h1>Listáz</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Meccs[0].fordulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meccs[0].haziveg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meccs[0].vendegveg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meccs[0].hazaifelido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meccs[0].vendegfelido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meccs[0].hazainev)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meccs[0].vendegnev)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Meccs) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fordulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.haziveg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendegveg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hazaifelido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendegfelido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hazainev)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendegnev)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

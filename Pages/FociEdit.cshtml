@@ -1,0 +1,65 @@
+﻿@page
+@model WebApplication1.Pages.FociEditModel
+
+@{
+    ViewData["Title"] = "FociEdit";
+}
+
+<h1>FociEdit</h1>
+
+<h4>Meccs</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Meccs.id" />
+            <div class="form-group">
+                <label asp-for="Meccs.fordulo" class="control-label"></label>
+                <input asp-for="Meccs.fordulo" class="form-control" />
+                <span asp-validation-for="Meccs.fordulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meccs.haziveg" class="control-label"></label>
+                <input asp-for="Meccs.haziveg" class="form-control" />
+                <span asp-validation-for="Meccs.haziveg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meccs.vendegveg" class="control-label"></label>
+                <input asp-for="Meccs.vendegveg" class="form-control" />
+                <span asp-validation-for="Meccs.vendegveg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meccs.hazaifelido" class="control-label"></label>
+                <input asp-for="Meccs.hazaifelido" class="form-control" />
+                <span asp-validation-for="Meccs.hazaifelido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meccs.vendegfelido" class="control-label"></label>
+                <input asp-for="Meccs.vendegfelido" class="form-control" />
+                <span asp-validation-for="Meccs.vendegfelido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meccs.hazainev" class="control-label"></label>
+                <input asp-for="Meccs.hazainev" class="form-control" />
+                <span asp-validation-for="Meccs.hazainev" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Meccs.vendegnev" class="control-label"></label>
+                <input asp-for="Meccs.vendegnev" class="form-control" />
+                <span asp-validation-for="Meccs.vendegnev" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
